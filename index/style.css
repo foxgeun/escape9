@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0s !important;
+            animation-duration: 0s !important;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  font-family: "Gugi", sans-serif;
+  text-align: center;
+  letter-spacing: -0.15vmin;
+  background-color: hsl(200 0% 6%);
+  overflow: hidden;
+}
+
+body::before {
+  --size: 150vmax;
+
+  content: "";
+  grid-area: 1 / 1;
+  width: var(--size);
+  height: var(--size);
+  background: conic-gradient(
+    #1f005c,
+    #700092,
+    #c800a0,
+    #fe005d,
+    #ff4335,
+    #ffb56b
+  );
+  -webkit-animation: rotate 10s linear infinite;
+          animation: rotate 10s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+h1 {
+  position: relative;
+  grid-area: 1 / 1;
+}
+
+span {
+  --shadow-offset: 0.25vmin;
+  --shadow-size: 0.2vmin;
+  --delay: -0.33s;
+
+  display: block;
+  color: hsla(0, 0%, 0%, 0.1);
+  background: linear-gradient(
+    -15deg,
+    #4158d0 0%,
+    #4158d0 20%,
+    #c850c0 30%,
+    #ffcc70 50%,
+    #c850c0 70%,
+    #4158d0 80%,
+    #4158d0 100%
+  );
+  background-size: 400% 400%;
+  font-size: clamp(1rem, 15vmin, 7rem);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-animation: shadow 2s calc(var(--i) * var(--delay)) linear infinite,
+    gradient 3s calc(var(--i) * var(--delay)) linear infinite;
+          animation: shadow 2s calc(var(--i) * var(--delay)) linear infinite,
+    gradient 3s calc(var(--i) * var(--delay)) linear infinite;
+}
+
+@-webkit-keyframes gradient {
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes gradient {
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+@-webkit-keyframes shadow {
+  from,
+  to {
+    text-shadow:
+      hsla(0, 0%, 0%, 0.2) var(--shadow-offset) var(--shadow-offset) var(--shadow-size), hsla(0, 0%, 100%, 0.2) calc(var(--shadow-offset) * -1) calc(var(--shadow-offset) * -1) var(--shadow-size);
+  }
+  50% {
+    text-shadow:
+      hsla(0, 0%, 0%, 0) var(--shadow-offset) var(--shadow-offset) var(--shadow-size), hsla(0, 0%, 100%, 0) calc(var(--shadow-offset) * -1) calc(var(--shadow-offset) * -1) var(--shadow-size);
+  }
+}
+
+@keyframes shadow {
+  from,
+  to {
+    text-shadow:
+      hsla(0, 0%, 0%, 0.2) var(--shadow-offset) var(--shadow-offset) var(--shadow-size), hsla(0, 0%, 100%, 0.2) calc(var(--shadow-offset) * -1) calc(var(--shadow-offset) * -1) var(--shadow-size);
+  }
+  50% {
+    text-shadow:
+      hsla(0, 0%, 0%, 0) var(--shadow-offset) var(--shadow-offset) var(--shadow-size), hsla(0, 0%, 100%, 0) calc(var(--shadow-offset) * -1) calc(var(--shadow-offset) * -1) var(--shadow-size);
+  }
+}
+
+
+form{
+	background-color: rgba(255, 255, 255, 0.7);
+	width: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+  z-index: 1;
+  
+}
+	
+	form{
+		width: 600px;
+		margin: 200px auto;
+	}
+	div{
+		width: 100%;
+		margin: 15px auto;
+
+	}
+	label{
+		display: block;
+		padding: 20px;
+		font-size: 25px;
+	}
+	input{
+		
+		width: 96%;
+		padding: 10px;
+		border: 1px solid #797979;
+		font-size: 20px;
+		margin-left: 20px;
+		background-color:transparent;
+		
+
+	}
+	button{
+		margin: 20px;
+		padding: 10px;
+		width: 100px;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		border-radius: 5px;
+		font-size: 20px;
+		font-weight: bold;
+		color: whitesmoke;
+		background-color: black;
+	}
+	span{
+		display: block;
+		margin-left: 20px;
+		color: red;
+		font-style: italic;
+	}
+	h2{
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 42px;
+		color: black;
+		font-weight: bold;
+		
+	}
+	 ul {
+            
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+        }
+        li {
+          
+          margin: 20px;
+        }
+        a {
+          display: block;
+          width: 200px;
+          height: 100px;
+          line-height: 200px;
+          
+          background-color: #FFF;
+          color: #333;
+          font-size: 1.5em;
+          text-shadow: 1px 1px #F8F8F8;
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+          transition: all 0.2s ease-in-out;
+        }
+        a:hover {
+          background-color: #F8F8F8;
+          color: #333;
+          box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+          transform: translateY(-5px);
+        }
+        #inbox,#sent,#draft,#spam,#trash {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background-color:grey
+        }
+		input{
+			border-style: none;
+			border-bottom: 1px solid;
+		}
+		#museum{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 80px;
+			margin-bottom: 50px;
+
+		}
