@@ -59,7 +59,7 @@ a.btn {
   position: relative;
   top: 50%; 
   left: 50%;
-  background: #fff;
+  background: rgb(255, 255, 255);
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
@@ -85,7 +85,7 @@ a.btn {
 }
 
 .content {
-  padding: 10%;
+  padding: 3%;
 }
 
 .good-job {
@@ -93,6 +93,18 @@ a.btn {
   font-family: 'Montserrat', Arial,       Helvetica, sans-serif;
   color: black;
 }
-h1{
-  font-size: 16px;
+pre{
+  color: black;
+  font-size: 14px;
+}
+pre::selection{
+  color: white;
+}
+span::selection{
+  color: rgb(250, 0, 0);
+  text-shadow: none;
+  text-decoration: none;
+  background-color: red;
+  
+  
 }
