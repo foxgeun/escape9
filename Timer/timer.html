@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<script type="text/javascript">
+  function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    var interval = setInterval(function () {
+      minutes = parseInt(timer / 60, 10)
+      seconds = parseInt(timer % 60, 10);
+  
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+  
+      display.textContent = minutes + ":" + seconds;
+  
+      if (--timer < 0) {
+        timer = duration;
+      }
+      if(timer === 0) {
+        clearInterval(interval);
+        display.textContent = "세션 만료!";
+      }
+    }, 1000);
+  }
+  
+  window.onload = function () {
+    /* 기본값 10(분)입니다. */
+    var minutes = 60;
+  
+    var fiveMinutes = (60 * minutes) - 1,
+      display = document.querySelector('#MyTimer');
+    startTimer(fiveMinutes, display);
+  };
+  
+  
+  </script>
+  
+  <span id="MyTimer">60:00</span>
+</body>
+</html>
