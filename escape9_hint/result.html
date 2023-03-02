@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Modal Mitosis 🦠 | CSS-Only Gooey Content Toggle | @keyframers 2.5.0</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <link rel="stylesheet" href="./result.css">
+
+  
+</head>
+
+<body>
+
+ 
+<script src="https://codepen.io/shshaw/pen/QmZYMG.js"></script>
+
+<svg class="goo-filter" viewBox="0 0 1 1">
+  <filter id="goo">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -20" result="goo" />
+    <feBlend in="SourceGraphic" in2="goo" />
+  </filter>
+</svg>
+
+<div id="app">
+  <input type="checkbox" id="toggle" name="toggle" />
+  
+  <div class="background">
+    <div class="bg-content">
+      <div class="drip"></div>
+      <div class="drip"></div>
+      <div class="drip"></div>
+    </div>
+    <div class="bg-description">
+      <div class="drip"></div>
+      <div class="drip"></div>
+      <div class="drip"></div>
+    </div>
+  </div>
+  
+  <div class="content">
+
+    <header>
+      경비원에 옷에서 열쇠를 얻어주세요.
+    </header>
+    <p class="pronunciation">하단 버튼을 눌러주시면 정답 확인이 가능합니다.</p> 
+    <label class="button" for="toggle"></label>
+  </div>
+  <div class="description">
+    <header>
+      경비원의 가슴주머니에서 열쇠를얻어 자물쇠를 열어주세요
+    </header>
+    <p></p>
+  </div>
+  
+</div>
+  
+  
+
+    <script  src="./script.js"></script>
+
+
+
+
+</body>
+
+</html>

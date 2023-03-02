@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Modal Mitosis 🦠 | CSS-Only Gooey Content Toggle | @keyframers 2.5.0</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <link rel="stylesheet" href="./result.css">
+
+  
+</head>
+
+<body>
+
+ 
+<script src="https://codepen.io/shshaw/pen/QmZYMG.js"></script>
+
+<svg class="goo-filter" viewBox="0 0 1 1">
+  <filter id="goo">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -20" result="goo" />
+    <feBlend in="SourceGraphic" in2="goo" />
+  </filter>
+</svg>
+
+<div id="app">
+  <input type="checkbox" id="toggle" name="toggle" />
+  
+  <div class="background">
+    <div class="bg-content">
+      <div class="drip"></div>
+      <div class="drip"></div>
+      <div class="drip"></div>
+    </div>
+    <div class="bg-description">
+      <div class="drip"></div>
+      <div class="drip"></div>
+      <div class="drip"></div>
+    </div>
+  </div>
+  
+  <div class="content">
+
+    <header>
+        플렛에서 설명을 자세히 읽어보신 뒤, 마르가리타 공주의 초상화 옆에 걸려있는 “설명액자”를 바르게 옮겨 걸어주세요
+    </header>
+    <p class="pronunciation">하단 버튼을 눌러주시면 정답 확인이 가능합니다.</p> 
+    <label class="button" for="toggle"></label>
+  </div>
+  <div class="description">
+    <header>
+      어떤 액자랑 어떤 액자랑 바꿔주세요
+    </header>
+    <p></p>
+  </div>
+  
+</div>
+  
+  
+
+    <script  src="./script.js"></script>
+
+
+
+
+</body>
+
+</html>
