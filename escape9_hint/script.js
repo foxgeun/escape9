@@ -1,4 +1,5 @@
 
+      
 var input = document.getElementsByTagName('input');
 var login = document.getElementById('log-in');
 var code = document.getElementById('code');
@@ -32,11 +33,13 @@ function startTimer(duration, display) {
       display = document.querySelector('#MyTimer');
     startTimer(fiveMinutes, display);
   };
+      const hint_Code = "555";
+      const hint_Message = "경비원 옷에서 찾아보세요";
   
 login.onclick = ()=>{
 
     if(code.value == "1h13"){
-        window.open('result.html', 'window_name', 'width=430, height=500, location=no, status=no, scrollbars=yes')
+      window.location.href = 'result.html';
         return false; 
     }
     
@@ -61,4 +64,31 @@ login.onclick = ()=>{
         alert("힌트코드를 다시 입력해주세요.")
         return false; 
     }
+
+    
+
+      function showHint(event) {
+        const codeInput = event.target;
+        const hintElement = codeInput.nextElementSibling;
+
+        if (codeInput.value === hint_Code) {
+          hintElement.textContent = hint_Message;
+        } else {
+          hintElement.textContent = "";
+        }
+      }
+
+      function handleLogin(event) {
+        event.preventDefault();
+        const codeInput = document.getElementById("code");
+        const hintElement = codeInput.nextElementSibling;
+
+        if (codeInput.value === hint_Code) {
+          hintElement.textContent = hint_Message;
+        } else {
+          hintElement.textContent = "";
+        }
+
+        codeInput.value = "";
+      }
 }

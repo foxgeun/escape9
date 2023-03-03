@@ -1,44 +1,92 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>hint</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, 
-  maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="./style.css">
-<script src="https://kit.fontawesome.com/dceadd6cbb.js" crossorigin="anonymous"></script>
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<h1>
-  <div id="login_form">
-    <form>
-    <div>
-      <h2>The Grand Museum</h2>
-      <div id="museum"><i  class="fa-sharp fa-solid fa-building-columns"></i></div>
-      <h2 id="MyTimer">60:00</h2>
-      <input id ="code" type="text" name="name" placeholder="HintCode">
-      <span class="1"></span>
-    </div>
-    <button id="log-in">힌트보기</button>
-  </form>
-  </div>
-</h1>
-<!-- partial -->
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/6400992831ebfa0fe7f04190/1gqh5choh';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
-  <!--End of Tawk.to Script-->
-<script src="script.js"></script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>hint</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/dceadd6cbb.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>
+      <div id="login_form">
+        <form>
+          <div>
+            <h2>The Grand Museum</h2>
+            <div id="museum">
+              <i class="fa-sharp fa-solid fa-building-columns"></i>
+            </div>
+            <h2 id="MyTimer">60:00</h2>
+            <input
+              id="code"
+              type="text"
+              name="name"
+              placeholder="HintCode"
+              onkeyup="showHint(event)"
+            />
+            <span class="hint"></span>
+          </div>
+          <button id="log-in" type="submit" onclick="handleLogin(event)">정답보기</button>
+        </form>
+      </div>
+    </h1>
+
+    <!-- partial -->
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/6400992831ebfa0fe7f04190/1gqh5choh";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <script>
+      const hintCode = "555";
+      const hintMessage = "경비원 옷에서 찾아보세요";
+
+      function showHint(event) {
+        const codeInput = event.target;
+        const hintElement = codeInput.nextElementSibling;
+
+        if (codeInput.value === hintCode) {
+          hintElement.textContent = hintMessage;
+        } else {
+          hintElement.textContent = "";
+        }
+      }
+
+      function handleLogin(event) {
+        event.preventDefault();
+        const codeInput = document.getElementById("code");
+        const hintElement = codeInput.nextElementSibling;
+
+        if (codeInput.value === hintCode) {
+          hintElement.textContent = hintMessage;
+        } else {
+          hintElement.textContent = "";
+        }
+
+        codeInput.value = "";
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
 </html>
